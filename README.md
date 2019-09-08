@@ -34,7 +34,7 @@ To know more differences visit [here.](https://www.baeldung.com/spring-vs-spring
 
 # Current Project Implementation :-
 
-<img src="./peopledemo/images/spring-boot-app.png" height=450 width=450 alt="peopledemo/images">
+<img src="./images/spring-boot-app.png" height=450 width=450 alt="/images">
 
 Currently there is implementation only for a REST service. There is no consumption of REST right now.
 
