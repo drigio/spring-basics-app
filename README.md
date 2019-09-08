@@ -84,5 +84,14 @@ This dir holds all the model classes. A model helps describe an *entity* in OOP.
 Services act as an interface between the DAO and the API controllers. It has a concrete implementation of the DAO interface and maps all the functions to that implementation directly which will be used by the controllers.
 
 ## Annotations
-[] Todo : 
+
+**TODO** -> Add annotations information.
+
+## References
+- https://www.youtube.com/watch?v=r-6BwGW4Sr8
+- https://spring.io
+- https://maven.apache.org
+- https://www.guru99.com/mvc-tutorial.html
+- https://dzone.com/articles/understanding-the-basics-of-spring-vs-spring-boot
+- https://www.baeldung.com/spring-vs-spring-boot
 
