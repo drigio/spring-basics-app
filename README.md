@@ -1,5 +1,7 @@
 # spring-basics-app
 
+Some basics of Spring and Spring Boot Framework and notes for the same.
+
 ## Tools and Frameworks
 1. [Spring](https://spring.io)
 2. [Spring Boot](https://spring.io/projects/spring-boot)
@@ -100,34 +102,65 @@ Used in the [*PersonService.java*](/src/main/java/com/example/peopledemo/service
 ### @Autowired
 It is used for implicit *dependency injection*. This annotation is applied on fields, setter methods, and constructors. When we use it on a constructor, injection happens at the time of object creation. Only one constructor of a Bean class can use @Autowired annotation at a time.
 
-Used in [*PersonController.java*](/src/main/java/com/example/peopledemo/api/PersonController.java) and [*PersonService.java*](/src/main/java/com/example/peopledemo/service/PersonService.java) for a constructor.
+Used in [*PersonController.java*](/src/main/java/com/example/peopledemo/api/PersonController.java) and [*PersonService.java*](/src/main/java/com/example/peopledemo/api/PersonService.java) for a constructor.
 
 ### @Qualifier
 Used to differentiate between different implementations of the same bean class. We give it the name of the implementation that we want to use. Here we use the name of the @Repository. It used with the @Autowired implementation to give more *control* on dependency injection
 
-Used in
+Used in [*PersonService.java*](/src/main/java/com/example/peopledemo/service/PersonService.java)
 
 ### @RestController
+Used to specify that the class is used as a Rest Controller class. The class then can use various annotations like @GetMapping, @PostMapping etc. When we use this annotation there is no need to specify the @ResponseBody explicitly for the RequestMappings. The consumers can get the format in JSON / XML. It is a class level annotation.
+
+Used in [*PersonController.java*](/src/main/java/com/example/peopledemo/api/PersonController.java)
 
 ### @JsonProperty
+This tells spring, what field of an object belongs to which key in the JSON object and vice versa. This helps to map the object to JSON format and helps in building java objects from JSON. It is a field level annotation.
+
+Used in [*Person.java*](/src/main/java/com/example/peopledemo/model/Person.java)
 
 ### @RequestBody
+This helps the method parameter to be bound to the incoming HTTP request body. Spring automatically converts the incoming http request body to the corresponding java object by mapping various fields specified by @JsonProperty.
+
+Used in [*PersonController.java*](/src/main/java/com/example/peopledemo/api/PersonController.java)
 
 ### @RequestMapping
+It can be used at both class level as well as method level. This annotation helps map the incoming https requests to a controller class or a request handler method. Each handler method can have their own @RequestMapping URI. We have to pass a URI to this RequestMapping which should not be fully qualified, rather a relational one. 
+
+Used in [*PersonController.java*](/src/main/java/com/example/peopledemo/api/PersonController.java)
 
 ### @PathVariable
+This annotation helps get the variables passed in http request's path and convert them to equivalent method arguments of any handler method. The URI can have multiple dynamic path variables, which can be used for different handler methods.
+
+Used in [*PersonController.java*](/src/main/java/com/example/peopledemo/api/PersonController.java)
 
 ### @SpringBootApplication
+This annotation is used only once to denote the beginning of a SpringBootApplication. This should be declared in the base package only as it performs Components scanning in its sub packages. It handles the creation of DispatcherServlets and other various boilerplate code for us.
+
+Used in [*DemoApplication.java*](/src/main/java/com/example/peopledemo/DemoApplication.java)
 
 ### @PostMapping
+Helps map *POST* requests to a URI either specified in @RequestMapping at class level / a URI passed to @PostMapping. 
+
+Used in [*PersonController.java*](/src/main/java/com/example/peopledemo/api/PersonController.java)
 
 ### @GetMapping
+Helps map *GET* requests to a URI either specified in @RequestMapping at class level / a URI passed to @PostMapping. 
+
+Used in [*PersonController.java*](/src/main/java/com/example/peopledemo/api/PersonController.java)
 
 ### @PutMapping
+Helps map *PUT* requests to a URI either specified in @RequestMapping at class level / a URI passed to @PostMapping. 
+
+Used in [*PersonController.java*](/src/main/java/com/example/peopledemo/api/PersonController.java)
 
 ### @DeleteMapping
+Helps map *DELETE* requests to a URI either specified in @RequestMapping at class level / a URI passed to @PostMapping. 
+
+Used in [*PersonController.java*](/src/main/java/com/example/peopledemo/api/PersonController.java)
 
 ### @Required
+This annotation enforces the population of any field in an object. This is similar to the nullability/empty check enforcement. This is used on setter methods of a class. However this annotation is marked *@deprecated*. So as an alternative for this, the constructor injection should be used, which is much clearer and enforces population at the creation itself. It is needed to make fields final, which helps in object immuatability too.
 
 ## References
 - https://www.youtube.com/watch?v=r-6BwGW4Sr8

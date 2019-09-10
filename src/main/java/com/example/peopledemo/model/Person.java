@@ -4,15 +4,17 @@ import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import org.springframework.beans.factory.annotation.Required;
+
 /**
  * Person Model Class
  */
 public class Person {
 
-    private UUID id;
-    private String fname;
-    private String lname;
-    private int age;
+    private final UUID id;
+    private final String fname;
+    private final String lname;
+    private final int age;
 
     public Person(@JsonProperty("id") UUID id,
                 @JsonProperty("fname") String fname,
