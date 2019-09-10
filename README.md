@@ -87,6 +87,48 @@ Services act as an interface between the DAO and the API controllers. It has a c
 
 **TODO** -> Add annotations information.
 
+### @Repository
+It is used in the concrete class that has the implementation of the DAO interface. Generally used in the class that has direct contact with the database. It fulfills the role of *Repository*.
+
+Used in the [*FakePersonDataAccessService.java*](./src/main/java/com/example/peopledemo/dao/FakePersonDataAccessService.java)
+
+### @Service
+It is used to denote a Service class to the Spring framework. It tells spring that this is the service layer implmentation for which the methods are *autowired* such as executing business logic, perform calculations and call external APIs. It is used on a class.
+
+Used in the [*PersonService.java*](/src/main/java/com/example/peopledemo/service/PersonService.java)
+
+### @Autowired
+It is used for implicit *dependency injection*. This annotation is applied on fields, setter methods, and constructors. When we use it on a constructor, injection happens at the time of object creation. Only one constructor of a Bean class can use @Autowired annotation at a time.
+
+Used in [*PersonController.java*](/src/main/java/com/example/peopledemo/api/PersonController.java) and [*PersonService.java*](/src/main/java/com/example/peopledemo/service/PersonService.java) for a constructor.
+
+### @Qualifier
+Used to differentiate between different implementations of the same bean class. We give it the name of the implementation that we want to use. Here we use the name of the @Repository. It used with the @Autowired implementation to give more *control* on dependency injection
+
+Used in
+
+### @RestController
+
+### @JsonProperty
+
+### @RequestBody
+
+### @RequestMapping
+
+### @PathVariable
+
+### @SpringBootApplication
+
+### @PostMapping
+
+### @GetMapping
+
+### @PutMapping
+
+### @DeleteMapping
+
+### @Required
+
 ## References
 - https://www.youtube.com/watch?v=r-6BwGW4Sr8
 - https://spring.io
@@ -94,4 +136,4 @@ Services act as an interface between the DAO and the API controllers. It has a c
 - https://www.guru99.com/mvc-tutorial.html
 - https://dzone.com/articles/understanding-the-basics-of-spring-vs-spring-boot
 - https://www.baeldung.com/spring-vs-spring-boot
-
+- https://springframework.guru/spring-framework-annotations/
