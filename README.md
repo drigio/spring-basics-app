@@ -21,7 +21,7 @@ INSERT INTO role VALUES(1, "ADMIN");
 
 INSERT INTO user_role VALUES(1,1);
 ```
-Copy Paste and execute the above queries into your mysql workbench / mysql cli application.
+Copy Paste and execute the above queries into your mysql workbench / mysql cli application **only after running Spring Boot application atleast once**.
 
 Use [Postman](https://www.getpostman.com
 ) for sending beautiful requests easily. (For Testing purposes only)
@@ -56,7 +56,7 @@ Use the value in token in every Request you send for accessing resources in the 
 
 **Example**
 ```JSON
-    "Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+    "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
 ```
 Now access protected resources like GET **http://localhost:8080/api/auth/hello**. On success will generate the output.
 ```JSON
