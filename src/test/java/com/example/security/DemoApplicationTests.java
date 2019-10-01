@@ -1,4 +1,4 @@
-package com.example.peopledemo;
+package com.example.security;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
